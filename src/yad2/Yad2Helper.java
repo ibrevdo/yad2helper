@@ -207,6 +207,7 @@ public class Yad2Helper {
 		//pd.downloadPage(uriString, htmlFile);
 		
 		yad2help.loadDbFromFile(dbFile);
+		Set<String> links = new HashSet<String>();
 		
 		JFileChooser dirChooser = new JFileChooser();
 		//fd.setDirectory(System.getProperty("user.dir"));
@@ -216,8 +217,6 @@ public class Yad2Helper {
 		dirChooser.showOpenDialog(null);
 		File folder = dirChooser.getSelectedFile();	
 		
-		Set<String> links = new HashSet<String>();
-		
 		if (folder != null){
 			for (final File htmlFile : folder.listFiles()){
 				links.addAll(yad2help.getFreshLinks(htmlFile, URL));
@@ -226,27 +225,31 @@ public class Yad2Helper {
 		}
 		
 		Thread.sleep(100);
-		
+		boolean updateDb = true;
 		dirChooser = new JFileChooser();
 		dirChooser.setCurrentDirectory(new java.io.File(System.getProperty("user.dir")));
 		dirChooser.setDialogTitle("Choose watchlist file");
 		dirChooser.showOpenDialog(null);
 		File watchlistFile = dirChooser.getSelectedFile();
-		if (watchlistFile == null) {
-			watchlistFile = new File("yad2.new.links");
-
-			if(!watchlistFile.exists()) {
-				watchlistFile.createNewFile();
-			}			
+		if (watchlistFile == null) {//user canceled the dialog 		
+			watchlistFile = new File("yad2.new.links");			
 		}
+		
+		if(!watchlistFile.exists()) {
+			updateDb = false;
+			watchlistFile.createNewFile();
+		}			
+
 		
 		List<ApartmentInfo> list = new LinkedList<>();
 				
-		//parse watch-list file into watch-list
-		yad2help.parseWatchlistFile(watchlistFile, list);
+		if (updateDb){
+			//parse watch-list file into watch-list
+			yad2help.parseWatchlistFile(watchlistFile, list);
 								
-		//update is_watched ads in main DB according watch-list
-		yad2help.updateWatchedAdsAndNotes(list);
+			//update is_watched ads in main DB according watch-list
+			yad2help.updateWatchedAdsAndNotes(list);
+		}
 		
 		yad2help.saveDbToFile(dbFile);
 				
