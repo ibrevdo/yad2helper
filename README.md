@@ -20,9 +20,9 @@
 - It ads to inner data base fresh links (but not the ads that were already seen before) and also scans the watchlist file for ads that still remain there (it means that you are interested to keep tracking these ads). After that a new watchlist file is produced. It contains fresh (unseen) ads and ads you keep for tracking. The watchlist file is ordered by dates of last time the ads had appear on yad2 website. Now you can click on links in watchlist and to open them in your brouser.
 - Note: you can write notes near ads (same line) in watchlist file. They will be kept for next time
 - So the basic routine to use this helper : 
-1. Each day go to yad2 website and do your search
-2. save all pages with ads that appeared in last 24 hours or so in directory of this date name
-3. run yad2helper and pass to it this directory
-4. use a created watchlist to filter only ads you interested in
+   1. Each day go to yad2 website and do your search
+   2. save all pages with ads that appeared in last 24 hours or so in directory of this date name
+   3. run yad2helper and pass to it this directory
+   4. use a created watchlist to filter only ads you interested in
 
  
