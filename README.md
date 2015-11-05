@@ -7,12 +7,12 @@
  
  Instructios:
  
-- clone the code project to eclipse and run it from there.
+- Clone the code project to eclipse and run it from there.
  
 - Open a search in www.yad2.co.il (cars or apartments) . Open as muach tabs as you interested according to dates.
  Save the tabs as raw html in a directory on your drive . (= download directory)
 
-- run the yad2 helper. In opening dialog pass the the download directory to it.
+- Run the yad2 helper. In opening dialog pass the the download directory to it.
 - It will scan all the ads links and produce the watchlist file (and will promt you with dialog where to save it)
 - Watchlist file is just a list of links to ad with dates they appeared on. You can delete ads that you not intersted in.
 
