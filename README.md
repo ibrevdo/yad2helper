@@ -1,6 +1,6 @@
 # yad2helper
 
- this Java application can help you to track ads from www.yad2.co.il
+ This Java application can help you to track ads from www.yad2.co.il
  and help you find the product you want effectively.
  
  Currently supports apartments and car sections
