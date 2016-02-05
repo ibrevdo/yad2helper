@@ -11,5 +11,5 @@ tmp/
 *~.nib
 local.properties
 example
-html*
-yad2*
+html.*
+yad2.*
