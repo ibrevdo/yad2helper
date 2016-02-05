@@ -10,3 +10,6 @@ tmp/
 *.swp
 *~.nib
 local.properties
+example
+html*
+yad2*
